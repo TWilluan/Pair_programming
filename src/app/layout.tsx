@@ -4,6 +4,8 @@ import { ThemeProvider } from "@/src/components/theme-provider";
 import { ModeToggle } from "@/src/components/mode-button";
 import { SessionProvider } from "next-auth/react";
 import "./globals.css";
+import { Providers } from "./provider";
+import { Header } from "./header";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -20,18 +22,10 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={inter.className}>
-        <SessionProvider>
-          <ThemeProvider
-            attribute="class"
-            defaultTheme="system"
-            enableSystem
-            disableTransitionOnChange>
-            <div>
-              <ModeToggle />
-            </div>
-            {children}
-          </ThemeProvider>
-        </SessionProvider>
+        <Providers>
+          <Header/>
+          {children}
+        </Providers>
       </body>
     </html >
   );
