@@ -9,7 +9,7 @@ export default async function Home() {
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
       {
         rooms.map((room) => {
-          return <div key={room.name}>{room.name}</div>
+          return <div key={room.id}>{room.name}</div>
         })
       }
     </main>

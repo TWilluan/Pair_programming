@@ -4,7 +4,7 @@ import { db } from "@/db";
 import { Room, room } from "@/db/schema"
 import { getSession } from "@/lib/auth";
 
-export const createRoom_onSubmit = async (roomData: Omit<Room, "userId">) => {
+export const createRoom_onSubmit = async (roomData: Omit<Room, "id" | "userId">) => {
     const session = await getSession()
     console.log(session)
 
