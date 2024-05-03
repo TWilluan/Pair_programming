@@ -9,8 +9,8 @@ export const Header = () => {
     const session = useSession()
     return (
         <div>
-            {session.data ? <Button onClick={() => signOut()}>SignOut</Button> : 
-                                <Button onClick={() => signIn("google")}>Signin</Button>}
+            {session.data ? <Button onClick={() => signOut()}>SignOut</Button> :
+                <Button onClick={() => signIn("google")}>Signin</Button>}
             <ModeToggle />
         </div>
     )

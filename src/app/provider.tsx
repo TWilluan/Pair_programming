@@ -2,7 +2,6 @@
 
 import { SessionProvider } from "next-auth/react"
 import { ThemeProvider } from "../components/theme-provider"
-import { ModeToggle } from "../components/mode-button"
 import React, { ReactNode } from "react"
 
 
