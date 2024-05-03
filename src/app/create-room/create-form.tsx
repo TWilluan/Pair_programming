@@ -50,7 +50,7 @@ export function CreateRoomForm() {
                     name="name"
                     render={({ field }) => (
                         <FormItem>
-                            <FormLabel>Room's Name</FormLabel>
+                            <FormLabel>Room Name</FormLabel>
                             <FormControl>
                                 <Input {...field} />
                             </FormControl>
@@ -72,7 +72,7 @@ export function CreateRoomForm() {
                                 <Input {...field} />
                             </FormControl>
                             <FormDescription>
-                                Please provide room's description
+                                Please provide room description
                             </FormDescription>
                             <FormMessage />
                         </FormItem>

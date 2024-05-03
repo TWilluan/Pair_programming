@@ -14,9 +14,7 @@ if (process.env.NODE_ENV === "production")
     db = drizzle(postgres(process.env.DB_URL!), {schema});
 } else {
     if (!global.db)
-    {
         global.db = drizzle(postgres(process.env.DB_URL!), {schema})
-    }
 
     db = global.db
 }
