@@ -7,5 +7,9 @@ import { getSession } from "@/lib/auth";
 export const createRoom_onSubmit = async (roomData: Omit<Room, "userId">) => {
     const session = await getSession()
     console.log(session)
-    await db.insert(room).values({...roomData, userId:"TODO"})
+
+    if (!session) {
+        throw new Error("You must log in to create this room")
+    }
+    await db.insert(room).values({...roomData, userId:session.user.id})
 };
