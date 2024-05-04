@@ -57,9 +57,8 @@ export const Header = () => {
     return (
         <header className="py-2 bg-zinc-100 container mx-auto dark:bg-zinc-900">
             <div className="flex justify-between items-center">
-
                 <Link href="/" className="flex">
-                    <Computer className="mr-2"/>
+                    <Computer className="mr-2" />
                     <span className="text-xl font-medium">Home</span>
                 </Link>
 

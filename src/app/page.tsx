@@ -19,7 +19,7 @@ const RoomCard = ({room} : {room: Room}) => {
   return (<>
     <Card>
       <CardHeader>
-        <CardTitle>{room.name}</CardTitle>
+        <CardTitle className="text-2xl tracking-wide font-medium">{room.name}</CardTitle>
         <CardDescription>{room.description}</CardDescription>
       </CardHeader>
       <CardContent>
