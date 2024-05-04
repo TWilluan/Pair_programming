@@ -14,6 +14,7 @@ import {
 import { useSession } from 'next-auth/react';
 import { useEffect, useState } from 'react';
 import { YourApiKey } from './apikey';
+import { GenerateToken } from './generateToken';
 
 // const apiKey:string = process.env.STREAM_API_KEY!
 const apiKey = YourApiKey() // stream API key
@@ -33,7 +34,8 @@ export function VideoStreaming({room} : {room : Room}) {
         const client = new StreamVideoClient({
             apiKey, user: {
                 id: userId
-            }, token
+            },
+            tokenProvider: () => GenerateToken()
         });
         const call = client.call('default', room.id);
         call.join({ create: true });
