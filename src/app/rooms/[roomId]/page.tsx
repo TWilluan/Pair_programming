@@ -3,6 +3,7 @@ import { GithubIcon } from "lucide-react"
 import Link from "next/link"
 import { Badge } from "@/components/ui/badge"
 import { TagList, splitTags } from "@/components/tags-list"
+import { VideoStreaming } from "./video_player"
 
 
 export default async function RoomPage(props: { params: { roomId: string } }) {
@@ -19,7 +20,7 @@ export default async function RoomPage(props: { params: { roomId: string } }) {
             <div className="grid grid-cols-4 min-h-screen">
                 <div className="col-span-3 p-6 pr-2">
                     <div className="rounded-lg border bg-card text-card-foreground shadow-sm p-4">
-                        Video Player
+                        <VideoStreaming room={room}/>
                     </div>
                 </div>
                 <div className="col-span-1 p-6 pl-2.5">
