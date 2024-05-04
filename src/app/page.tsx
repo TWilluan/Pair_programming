@@ -12,7 +12,7 @@ import {
   CardTitle,
 } from "@/components/ui/card"
 import { Room } from "@/db/schema";
-import { GitBranchIcon, GithubIcon } from "lucide-react";
+import { GithubIcon } from "lucide-react";
 import { getRooms } from "@/services/room";
 
 const RoomCard = ({room} : {room: Room}) => {

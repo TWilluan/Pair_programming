@@ -20,8 +20,8 @@ import { useRouter } from 'next/navigation'
 const formSchema = z.object({
     name: z.string().min(1).max(50),
     description: z.string().min(1).max(250),
-    languages: z.string().min(1).max(50),
-    gitRepo: z.string().min(1).max(50),
+    tags: z.string().min(1).max(50),
+    gitRepo: z.string().min(0).max(50),
 })
 
 export function CreateRoomForm() {
@@ -32,7 +32,7 @@ export function CreateRoomForm() {
         defaultValues: {
             name: "",
             description: "",
-            languages: "",
+            tags: "",
             gitRepo: ""
         },
     })
@@ -81,15 +81,15 @@ export function CreateRoomForm() {
 
                 <FormField
                     control={form.control}
-                    name="languages"
+                    name="tags"
                     render={({ field }) => (
                         <FormItem>
-                            <FormLabel>Languges</FormLabel>
+                            <FormLabel>Tags</FormLabel>
                             <FormControl>
                                 <Input {...field} />
                             </FormControl>
                             <FormDescription>
-                                Main coding languages
+                                List your programming languages, framwork, other tech
                             </FormDescription>
                             <FormMessage />
                         </FormItem>
@@ -106,7 +106,7 @@ export function CreateRoomForm() {
                                 <Input {...field} />
                             </FormControl>
                             <FormDescription>
-                                This is your public room name.
+                                Your Github repository
                             </FormDescription>
                             <FormMessage />
                         </FormItem>
